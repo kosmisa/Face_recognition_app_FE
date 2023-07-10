@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Particles from "react-tsparticles";
-// import particlesOptions from "./components/particlesOptions/particlesOptions";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import Navigation from "./components/Navigation/Navigation";
 import Signin from "./components/Signin/Signin";
@@ -10,19 +9,36 @@ import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import "./App.css";
 
-// Proveriti da li postoji da se particlesOptions pomeri u neki fajl??? I kako className radi za app.css?
 const particlesOptions = {
   fpsLimit: 120,
+  interactivity: {
+    events: {
+      onHover: {
+        enable: true,
+        mode: "repulse",
+      },
+      resize: true,
+    },
+    modes: {
+      push: {
+        quantity: 4,
+      },
+      repulse: {
+        distance: 50,
+        duration: 0.4,
+      },
+    },
+  },
   particles: {
     color: {
-      value: "#ffffff",
+      value: "#2D80FC",
     },
     links: {
-      color: "#ffffff",
-      distance: 200,
+      color: "#C133FF",
+      distance: 150,
       enable: true,
-      opacity: 1,
-      width: 0.3,
+      opacity: 1.5,
+      width: 0.45,
     },
     move: {
       direction: "none",
@@ -35,7 +51,7 @@ const particlesOptions = {
     number: {
       density: {
         enable: true,
-        area: 475,
+        area: 465,
       },
       value: 57,
     },
@@ -43,13 +59,14 @@ const particlesOptions = {
       value: 0.5,
     },
     shape: {
-      type: "circle",
+      type: "triangle",
     },
     size: {
       random: true,
       value: 3,
     },
   },
+  detectRetina: true,
 };
 
 const initialState = {
